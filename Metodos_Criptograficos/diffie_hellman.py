@@ -1,13 +1,21 @@
-"""Este programa realiza el método de cifrada de Diffie-Hellman"""
-def procesamiento(p,g,x):
-    X = (g**x) % p
-    return X
+"""Este programa realiza el método de cifrada de Diffie-Hellman."""
+import os
 
-p = int(input("Ingrese el número primo público para el método de encriptación: "))
+
+def procesamiento(p, g, x):
+    """Retorna el valor de la operación de Diffie-Hellman."""
+    y = (g**x) % p
+    return y
+
+
+os.system("cls")
+
+p = int(input("Ingrese el número primo público"
+              " para el método de encriptación: "))
 
 g = int(input("Ingrese un número a cifrar: "))
 
-#Solicitamos la clave privada de los usuarios
+# Solicitamos la clave privada de los usuarios
 a = int(input("Ingrese la clave privada que usará el usuario 1: "))
 b = int(input("Ingrese la clave privada que usará el usuario 2: "))
 
