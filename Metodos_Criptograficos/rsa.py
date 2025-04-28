@@ -99,18 +99,17 @@ while __name__ == "__main__":
     # Delimitamos un rango de valores para obtener la clave privada j
     rango = 1000
     encriptación(p, q, msg, rango)
-    opcion = True
     # Preguntamos si desea realizar otra encriptación
-    while opcion is True:
-        opcion = bool(
-            int(
-                input(
-                    "¿Desea realizar otra encriptación con otro mensaje?"
-                    " (Si: cualquier numero / No: 0)\n"
+    while True:
+        opcion = int(
+                    input(
+                        "¿Desea realizar otra encriptación con otro mensaje?"
+                        " (Si: 1/ No: Cualquier otro numero)\n"
+                    )
                 )
-            )
-        )
-        if opcion is True:
+        if opcion != 1:
+            break
+        else:
             msg = input("Ingrese el mensaje a cifrar: \n")
             encriptación(p, q, msg, rango)
             continue
